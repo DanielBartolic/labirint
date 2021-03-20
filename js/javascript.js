@@ -113,10 +113,10 @@ function animate() {
   drawKajak(t);
   t++;
 
-//   if(prog > 40){
-//     drawShark(s);
-//     s++;
-//   }
+  if(prog > 40){
+    drawShark(s);
+    s++;
+  }
 
   start();
   
