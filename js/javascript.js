@@ -113,14 +113,10 @@ function animate() {
   drawKajak(t);
   t++;
 
-  if(prog > 40){
-    drawShark(s);
-    s++;
-  }
-
-  if(prog>=115){
-      modal.style.display = "block";
-  }
+//   if(prog > 40){
+//     drawShark(s);
+//     s++;
+//   }
 
   start();
   
