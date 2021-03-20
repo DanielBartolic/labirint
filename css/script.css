@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  background: rgb(4, 196, 217);
+  background: linear-gradient(
+    180deg,
+    rgba(4, 196, 217, 1) 0%,
+    rgba(197, 238, 242, 1) 100%
+  );
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "title title title title title title"
+    "buttons canvas canvas canvas canvas progress"
+    "buttons canvas canvas canvas canvas progress"
+    "buttons canvas canvas canvas canvas progress"
+    "footer footer footer footer footer footer";
+}
+h1 {
+  color: #f2f2f2;
+  text-shadow: 1px 1px  rgb(2, 119, 132);
+}
+canvas {
+  width: 100%;
+  height: 100%;
+
+}
+
+.title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  grid-area: canvas;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress {
+  z-index: -1;
+  grid-area: canvas;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  grid-area: buttons;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* btn */
+input[type="button"] {
+  font-family: "Raleway", sans-serif;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+input[type="button"] {
+  font-family: "Raleway", sans-serif;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #04c4d9;
+  transition: all 0.4s ease 0s;
+}
+input[type="button"]:hover {
+  background-color: #04c4d9;
+  color: #f2f2f2;
+}
+
+.bar {
+  max-width: 603px;
+  --progress: 0%;
+  --prog: calc(calc(var(--progress) * 1.2) - 15%);
+  --size: 0.5;
+  --w: 100%;
+  --h: 100%;
+  --hue: 0;
+
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+
+  overflow: hidden;
+}
+.bar > .water {
+  --margin: 50px;
+  position: absolute;
+  top: calc(100% - var(--prog) - calc(18% * var(--size)));
+  width: 100%;
+  height: calc(100% + var(--margin));
+  transition: top 1s;
+  filter: hue-rotate(var(--hue));
+}
+.bar > .water > .water-top {
+  width: 100%;
+  height: calc(calc(calc(var(--w) / 2) * var(--size)) - 2px);
+  background-image: url("../img/wave.png");
+  background-size: calc(100% * var(--size));
+  background-repeat: repeat-x;
+  background-position: 0 0;
+
+  animation-name: flow;
+  animation-duration: calc(1s * var(--size));
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.bar > .water > .water-body {
+  width: 100%;
+  height: 200%;
+  margin-top: -65px;
+  background-image: url("../img/wave2.png");
+  background-size: 100%;
+  background-repeat: repeat-y;
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: calc(var(--w) * var(--size)) 0;
+  }
+}
