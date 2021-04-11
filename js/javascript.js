@@ -198,59 +198,29 @@ function drawKajak(t) {
 }
 
 function drawShark(t) {
-  var xOff = -10;
-  var yOff = -10;
-  var imgH1 = document.getElementById("sharkH1");
-  var imgH2 = document.getElementById("sharkH2");
-  var imgH1down = document.getElementById("sharkH1down");
-  var imgH2down = document.getElementById("sharkH2down");
-  var imgV1up = document.getElementById("sharkV1up");
-  var imgV2up = document.getElementById("sharkV2up");
-  var imgV1down = document.getElementById("sharkV1down");
-  var imgV2down = document.getElementById("sharkV2down");
+  var imgV2 = document.getElementById("shark1");
+  var imgH2 = document.getElementById("shark2");
+  var imgV1 = document.getElementById("shark3");
+  var imgH1 = document.getElementById("shark4");
 
   if (changeYs == pointsS[t].y && changeXs-pointsS[t].x < 0) {
-    if (desnaSlika) {
-      ctxPot.drawImage(imgV1up, pointsS[t - 1].x + xOff*4,pointsS[t - 1].y + yOff,55,20);
-      ctxPot.drawImage(imgV1up, pointsS[t].x + xOff*4, pointsS[t].y + yOff, 55, 20);
-    }
-    if (LevaSlika) {
-      ctxPot.drawImage(imgV1down,pointsS[t - 1].x + xOff*4,pointsS[t - 1].y + yOff,55,20);
-      ctxPot.drawImage(imgV1down, pointsS[t].x + xOff*4, pointsS[t].y + yOff, 55, 20);
-    }
+      ctxPot.drawImage(imgV1, pointsS[t - 1].x-28,pointsS[t - 1].y-28,55,55);
+      ctxPot.drawImage(imgV1, pointsS[t].x-28,pointsS[t].y-28,55,55);
   }
 
   if (changeYs == pointsS[t].y && changeXs-pointsS[t].x > 0) {
-    if (desnaSlika) {
-      ctxPot.drawImage(imgV2up, pointsS[t - 1].x + xOff,pointsS[t - 1].y + yOff,55,20);
-      ctxPot.drawImage(imgV2up, pointsS[t].x + xOff, pointsS[t].y + yOff, 55, 20);
-    }
-    if (LevaSlika) {
-      ctxPot.drawImage(imgV2down,pointsS[t - 1].x + xOff,pointsS[t - 1].y + yOff,55,20);
-      ctxPot.drawImage(imgV2down, pointsS[t].x + xOff, pointsS[t].y + yOff, 55, 20);
-    }
+    ctxPot.drawImage(imgV2, pointsS[t - 1].x-28,pointsS[t - 1].y-28,55,55);
+    ctxPot.drawImage(imgV2, pointsS[t].x-28,pointsS[t].y-28,55,55);
   }
 
   if (changeXs == pointsS[t].x && changeYs-pointsS[t].y > 0) {
-    if (desnaSlika) {
-      ctxPot.drawImage(imgH1,pointsS[t - 1].x + xOff, pointsS[t - 1].y + yOff,20,55);
-      ctxPot.drawImage(imgH1, pointsS[t].x + xOff, pointsS[t].y + yOff, 20, 55);
-    }
-    if (LevaSlika) {
-      ctxPot.drawImage(imgH2,pointsS[t - 1].x + xOff,pointsS[t - 1].y + yOff,20,55);
-      ctxPot.drawImage(imgH2, pointsS[t].x + xOff, pointsS[t].y + yOff, 20, 55);
-    }
+    ctxPot.drawImage(imgH2, pointsS[t - 1].x-28,pointsS[t - 1].y-28,55,55);
+    ctxPot.drawImage(imgH2, pointsS[t].x-28,pointsS[t].y-28,55,55);
   }
 
   if (changeXs == pointsS[t].x && changeYs-pointsS[t].y < 0) {
-    if (desnaSlika) {
-      ctxPot.drawImage(imgH1down,pointsS[t - 1].x + xOff, pointsS[t - 1].y + yOff*4,20,55);
-      ctxPot.drawImage(imgH1down, pointsS[t].x + xOff, pointsS[t].y + yOff*4, 20, 55);
-    }
-    if (LevaSlika) {
-      ctxPot.drawImage(imgH2down,pointsS[t - 1].x + xOff,pointsS[t - 1].y + yOff*4,20,55);
-      ctxPot.drawImage(imgH2down, pointsS[t].x + xOff, pointsS[t].y + yOff*4, 20, 55);
-    }
+    ctxPot.drawImage(imgH1, pointsS[t - 1].x-28,pointsS[t - 1].y-28,55,55);
+    ctxPot.drawImage(imgH1, pointsS[t].x-28,pointsS[t].y-28,55,55);
   }
 
   changeXs = pointsS[t].x;
